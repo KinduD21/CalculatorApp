@@ -1,0 +1,166 @@
+@import "../css/nullstyle.css";
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+input {
+  color: hsl(0deg, 0%, 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+body {
+  background-color: hsl(222deg, 26%, 31%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+button {
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.calc-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  max-width: -webkit-min-content;
+  max-width: -moz-min-content;
+  max-width: min-content;
+}
+.calc-container .calc-container__theme-switcher {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.calc-container__switcher-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.calc-container__switcher-wrapper .calc-container__switch-numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  top: -5px;
+}
+.calc-container__switcher-wrapper .calc-container__switch-numbers .calc-container__switch-button {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: hsl(6deg, 63.6%, 50.4%);
+  top: 30px;
+  left: 8px;
+  z-index: 1;
+}
+.calc-container__switcher-wrapper .calc-container__switch-numbers .calc-container__switch-button_background {
+  position: absolute;
+  background-color: hsl(224deg, 36%, 15%);
+  height: 25px;
+  width: 100%;
+  top: 25px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.calc-container__switcher-wrapper .calc-container__switch-numbers p {
+  padding: 0px 10px;
+}
+
+#screen {
+  background-color: hsl(224deg, 36%, 15%);
+  min-height: 100px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 0px 30px;
+  font-size: 36px;
+  border: none;
+  text-align: right;
+  outline: none;
+}
+
+.keyboard-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  background-color: hsl(223deg, 31%, 20%);
+  border-radius: 2%;
+}
+.keyboard-container .keyboard-container__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.keyboard-container button {
+  color: hsl(221deg, 14%, 31%);
+  background-color: hsl(32deg, 26.3%, 88.8%);
+  border-radius: 10px;
+  min-height: 50px;
+  min-width: 80px;
+  -webkit-box-shadow: 0px 4px hsl(25deg, 15.8%, 64.1%);
+          box-shadow: 0px 4px hsl(25deg, 15.8%, 64.1%);
+}
+.keyboard-container .button_delreset-color {
+  background-color: hsl(225deg, 20.9%, 49.6%);
+  -webkit-box-shadow: 0px 4px hsl(224deg, 29.3%, 35.5%);
+          box-shadow: 0px 4px hsl(224deg, 29.3%, 35.5%);
+  color: hsl(0deg, 0%, 100%);
+}
+.keyboard-container .button_equal-color {
+  background-color: hsl(6deg, 63.6%, 50.4%);
+  -webkit-box-shadow: 0px 4px hsl(6deg, 73.3%, 32.4%);
+          box-shadow: 0px 4px hsl(6deg, 73.3%, 32.4%);
+  color: hsl(0deg, 0%, 100%);
+}
+.keyboard-container .keyboard-container__row_main-bottom {
+  display: -ms-grid;
+  display: grid;
+}
+.keyboard-container .keyboard-container__row_main-bottom .button_delreset-color {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  border-radius: 10px;
+}
+.keyboard-container .keyboard-container__row_main-bottom .button_equal-color {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  border-radius: 10px;
+}

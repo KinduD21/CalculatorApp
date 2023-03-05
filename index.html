@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/nullstyle.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Calculator App</title>
+  </head>
+  <body>
+    <div class="calc-container">
+      <div class="calc-container__theme-switcher">
+        <h2>calc</h2>
+        <div class="calc-container__switcher-wrapper">
+          <h6>THEME</h6>
+          <div class="calc-container__switch-numbers">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <button class="calc-container__switch-button"></button>
+            <div class="calc-container__switch-button_background"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen">
+        <input type="text" name="calc" readonly id="screen">
+      </div>
+
+      <div class="keyboard-container">
+        <div class="keyboard-container__row">
+          <button id="seven">7</button>
+          <button id="eight">8</button>
+          <button id="nine">9</button>
+          <button id="delete" class="keyboard-container__button button_delreset-color">DEL</button>
+        </div>
+        <div class="keyboard-container__row">
+          <button id="four">4</button>
+          <button id="five">5</button>
+          <button id="six">6</button>
+          <button id="add">+</button>
+        </div>
+        <div class="keyboard-container__row">
+          <button id="one">1</button>
+          <button id="two">2</button>
+          <button id="three">3</button>
+          <button id="subtract">-</button>
+        </div>
+        <div class="keyboard-container__row">
+          <button id="decimal">.</button>
+          <button id="zero">0</button>
+          <button id="divide">/</button>
+          <button id="multiply">x</button>
+        </div>
+        <div class="keyboard-container__row keyboard-container__row_main-bottom">
+          <button id="reset" class="keyboard-container__button button_delreset-color">RESET</button>
+          <button id="equals" class="keyboard-container__button button_equal-color">=</button>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

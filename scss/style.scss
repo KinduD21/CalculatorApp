@@ -1,0 +1,143 @@
+@import "../css/nullstyle.css";
+
+// Variables
+
+$text-color: hsl(0, 0%, 100%);
+$body-color: hsl(222, 26%, 31%);
+$keyboard-color: hsl(223, 31%, 20%);
+$input-switch-bg-color: hsl(224, 36%, 15%);
+$delreset-color: hsl(225, 20.9%, 49.6%);
+$equal-circle-color: hsl(6, 63.6%, 50.4%);
+$button-bg-color: hsl(32, 26.3%, 88.8%);
+
+// Fonts
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+input {
+  color: $text-color;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+// Main Part
+
+body {
+  background-color: $body-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.calc-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  max-width: min-content;
+  .calc-container__theme-switcher {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+
+.calc-container__switcher-wrapper {
+  display: flex;
+  gap: 20px;
+  & .calc-container__switch-numbers {
+    display: flex;
+    position: relative;
+    top: -5px;
+    & .calc-container__switch-button {
+      position: absolute;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background-color: $equal-circle-color;
+      top: 30px;
+      left: 8px;
+      z-index: 1;
+    }
+    & .calc-container__switch-button_background {
+      position: absolute;
+      background-color: $input-switch-bg-color;
+      height: 25px;
+      width: 100%;
+      top: 25px;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+    & p {
+      padding: 0px 10px;
+    }
+  }
+}
+
+#screen {
+  background-color: $input-switch-bg-color;
+  min-height: 100px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 0px 30px;
+  font-size: 36px;
+  border: none;
+  text-align: right;
+  outline: none;
+}
+
+.keyboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  background-color: $keyboard-color;
+  border-radius: 2%;
+  & .keyboard-container__row {
+    display: flex;
+    gap: 20px;
+  }
+  & button {
+    color: hsl(221, 14%, 31%);
+    background-color: $button-bg-color;
+    border-radius: 10px;
+    min-height: 50px;
+    min-width: 80px;
+    box-shadow: 0px 4px hsl(25, 15.8%, 64.1%);
+  }
+  & .button_delreset-color {
+    background-color: $delreset-color;
+    box-shadow: 0px 4px hsl(224, 29.3%, 35.5%);
+    color: $text-color;
+  }
+  & .button_equal-color {
+    background-color: $equal-circle-color;
+    box-shadow: 0px 4px hsl(6, 73.3%, 32.4%);
+    color: $text-color;
+  }
+  & .keyboard-container__row_main-bottom {
+    display: grid;
+    & .button_delreset-color {
+      grid-row: 1;
+      border-radius: 10px;
+    }
+    & .button_equal-color {
+      grid-row: 1;
+      border-radius: 10px;
+    }
+  }
+}
