@@ -1,3 +1,10 @@
+const body = document.querySelector("body");
+const h2 = document.querySelector("h2");
+const h6 = document.querySelector("h6");
+const p = document.querySelectorAll("p");
+
+// Calc Function
+
 const result = document.querySelector("#screen");
 
 const oneButton = document.getElementById("one");
@@ -85,7 +92,6 @@ function calculate() {
   let currentResult = result.value;
   let operators = ["+", "-", "*", "/"];
 
-  // check if the last character is an operator
   if (operators.includes(currentResult.slice(-1))) {
     currentResult = currentResult.slice(0, -1);
   }
@@ -97,3 +103,77 @@ function calculate() {
     result.value = "Error";
   }
 }
+
+// Theme switcher
+
+const switcher = document.querySelector(
+  ".calc-container__switch-button_background"
+);
+const switchButton = switcher.querySelector(".calc-container__switch-button");
+
+const keyboardContainer = document.querySelector(".keyboard-container");
+const keyboardContainerRows = keyboardContainer.querySelectorAll(
+  ".keyboard-container__row"
+);
+
+function addClassToButtons(button) {
+  button.classList.add("button3");
+}
+
+keyboardContainerRows.forEach((keyboardContainerRow) => {
+  const button = Array.from(keyboardContainerRow.querySelectorAll("button"));
+  button.forEach(addClassToButtons);
+  // console.log(button);
+});
+
+// console.log(keyboardContainer);
+// console.log(keyboardContainerRows);
+
+switcher.addEventListener("click", function switchTheme() {
+  if (!body.classList.contains("body2") && !body.classList.contains("body3")) {
+    body.classList.add("body2");
+    h2.classList.add("h2_theme2");
+    h6.classList.add("h6_theme2");
+    p.forEach((el) => el.classList.add("p_theme2"));
+    switcher.classList.add("calc-container__switch-button_background2");
+    switchButton.classList.add("calc-container__switch-button2");
+    keyboardContainer.classList.add("keyboard-container2");
+    result.classList.add("screen2", "input2");
+
+    addClassToButtons(button, "button2");
+  } else if (
+    body.classList.contains("body2") &&
+    !body.classList.contains("body3")
+  ) {
+    body.classList.add("body3");
+    h2.classList.add("h2_theme3");
+    h6.classList.add("h6_theme3");
+    p.forEach((el) => el.classList.add("p_theme3"));
+    switcher.classList.add("calc-container__switch-button_background3");
+    switchButton.classList.add("calc-container__switch-button3");
+    keyboardContainer.classList.add("keyboard-container3");
+    result.classList.add("screen3", "input3");
+  } else if (
+    body.classList.contains("body2") &&
+    body.classList.contains("body3")
+  ) {
+    body.classList.remove("body2", "body3");
+    h2.classList.remove("h2_theme2", "h2_theme3");
+    h6.classList.remove("h6_theme2", "h6_theme3");
+    p.forEach((el) => el.classList.remove("p_theme2", "p_theme3"));
+    switcher.classList.remove(
+      "calc-container__switch-button_background2",
+      "calc-container__switch-button_background3"
+    );
+    switchButton.classList.remove(
+      "calc-container__switch-button2",
+      "calc-container__switch-button3"
+    );
+    keyboardContainer.classList.remove(
+      "keyboard-container2",
+      "keyboard-container3"
+    );
+    result.classList.remove("screen2", "screen3", "input2", "input3");
+  }
+  //   keyboardBtns.forEach((btn) => btn.classList.add("button2"));
+});

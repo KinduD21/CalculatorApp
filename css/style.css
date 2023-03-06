@@ -28,7 +28,7 @@ body {
 
 button {
   border: none;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -72,17 +72,11 @@ button {
   position: relative;
   top: -5px;
 }
-.calc-container__switcher-wrapper .calc-container__switch-numbers .calc-container__switch-button {
-  position: absolute;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  background-color: hsl(6deg, 63.6%, 50.4%);
-  top: 30px;
-  left: 8px;
-  z-index: 1;
+.calc-container__switcher-wrapper .calc-container__switch-numbers p {
+  padding: 0px 10px;
 }
-.calc-container__switcher-wrapper .calc-container__switch-numbers .calc-container__switch-button_background {
+
+.calc-container__switch-button_background {
   position: absolute;
   background-color: hsl(224deg, 36%, 15%);
   height: 25px;
@@ -91,11 +85,18 @@ button {
   border-radius: 15px;
   cursor: pointer;
 }
-.calc-container__switcher-wrapper .calc-container__switch-numbers p {
-  padding: 0px 10px;
+
+.calc-container__switch-button {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: hsl(6deg, 63.6%, 50.4%);
+  top: 5px;
+  left: 8px;
 }
 
-#screen {
+.screen {
   background-color: hsl(224deg, 36%, 15%);
   min-height: 100px;
   border-radius: 10px;
@@ -138,17 +139,26 @@ button {
   -webkit-box-shadow: 0px 4px hsl(25deg, 15.8%, 64.1%);
           box-shadow: 0px 4px hsl(25deg, 15.8%, 64.1%);
 }
+.keyboard-container button:active {
+  background-color: hsl(0deg, 0%, 100%);
+}
 .keyboard-container .button_delreset-color {
   background-color: hsl(225deg, 20.9%, 49.6%);
   -webkit-box-shadow: 0px 4px hsl(224deg, 29.3%, 35.5%);
           box-shadow: 0px 4px hsl(224deg, 29.3%, 35.5%);
   color: hsl(0deg, 0%, 100%);
 }
+.keyboard-container .button_delreset-color:active {
+  background-color: hsl(224deg, 51%, 76%);
+}
 .keyboard-container .button_equal-color {
   background-color: hsl(6deg, 63.6%, 50.4%);
   -webkit-box-shadow: 0px 4px hsl(6deg, 73.3%, 32.4%);
           box-shadow: 0px 4px hsl(6deg, 73.3%, 32.4%);
   color: hsl(0deg, 0%, 100%);
+}
+.keyboard-container .button_equal-color:active {
+  background-color: hsl(6deg, 93%, 67%);
 }
 .keyboard-container .keyboard-container__row_main-bottom {
   display: -ms-grid;
@@ -163,4 +173,67 @@ button {
   -ms-grid-row: 1;
   grid-row: 1;
   border-radius: 10px;
+}
+
+.body2 {
+  background-color: hsl(0deg, 0%, 90%);
+}
+
+.h2_theme2,
+.h6_theme2,
+.p_theme2 {
+  color: hsl(50deg, 6%, 19%);
+}
+
+.calc-container__switch-button2 {
+  left: 35px;
+  -webkit-transition: 0.25s linear;
+  transition: 0.25s linear;
+  background-color: hsl(25deg, 94%, 61%);
+}
+
+.screen2 {
+  background-color: hsl(0deg, 0%, 93%);
+}
+
+.input2 {
+  color: hsl(60deg, 10%, 20%);
+}
+
+.keyboard-container2,
+.calc-container__switch-button_background2 {
+  background-color: hsl(0deg, 6%, 82%);
+}
+
+.button2 {
+  background-color: hsl(48deg, 9%, 89%);
+}
+
+.body3 {
+  background-color: hsl(268deg, 75%, 9%);
+}
+
+.h2_theme3,
+.h6_theme3,
+.p_theme3 {
+  color: hsl(55deg, 100%, 64%);
+}
+
+.calc-container__switch-button3 {
+  left: 65px;
+  background-color: hsl(179deg, 100%, 78%);
+}
+
+.input3 {
+  color: hsl(51deg, 88%, 59%);
+}
+
+.keyboard-container3,
+.screen3,
+.calc-container__switch-button_background3 {
+  background-color: hsl(269deg, 74%, 12%);
+}
+
+.button3 {
+  background-color: hsl(269deg, 48%, 20%);
 }
