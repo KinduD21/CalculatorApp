@@ -2,7 +2,7 @@
 
 // Variables
 
-$text-color: hsl(0, 0%, 100%);
+$white-color: hsl(0, 0%, 100%);
 $body-color: hsl(222, 26%, 31%);
 $keyboard-color: hsl(223, 31%, 20%);
 $input-switch-bg-color: hsl(224, 36%, 15%);
@@ -21,7 +21,7 @@ h6,
 p,
 button,
 input {
-  color: $text-color;
+  color: $white-color;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
@@ -112,35 +112,9 @@ button {
     display: flex;
     gap: 20px;
   }
-  & button {
-    color: hsl(221, 14%, 31%);
-    background-color: $button-bg-color;
-    border-radius: 10px;
-    min-height: 50px;
-    min-width: 80px;
-    box-shadow: 0px 4px hsl(25, 15.8%, 64.1%);
-    &:active {
-      background-color: $text-color;
-    }
-  }
-  & .button_delreset-color {
-    background-color: $delreset-color;
-    box-shadow: 0px 4px hsl(224, 29.3%, 35.5%);
-    color: $text-color;
-    &:active {
-      background-color: hsl(224°, 51%, 76%);
-    }
-  }
-  & .button_equal-color {
-    background-color: $equal-circle-color;
-    box-shadow: 0px 4px hsl(6, 73.3%, 32.4%);
-    color: $text-color;
-    &:active {
-      background-color: hsl(6°, 93%, 67%);
-    }
-  }
   & .keyboard-container__row_main-bottom {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     & .button_delreset-color {
       grid-row: 1;
       border-radius: 10px;
@@ -149,6 +123,35 @@ button {
       grid-row: 1;
       border-radius: 10px;
     }
+  }
+}
+
+.keyboard-container__button {
+  color: hsl(221, 14%, 31%);
+  background-color: $button-bg-color;
+  border-radius: 10px;
+  min-height: 50px;
+  min-width: 80px;
+  box-shadow: 0px 4px hsl(25, 15.8%, 64.1%);
+  &:active {
+    background-color: $white-color;
+  }
+}
+
+.button_delreset-color {
+  background-color: $delreset-color;
+  box-shadow: 0px 4px hsl(224, 29.3%, 35.5%);
+  color: $white-color;
+  &:active {
+    background-color: hsl(224°, 51%, 76%);
+  }
+}
+.button_equal-color {
+  background-color: $equal-circle-color;
+  box-shadow: 0px 4px hsl(6, 73.3%, 32.4%);
+  color: $white-color;
+  &:active {
+    background-color: hsl(6°, 93%, 67%);
   }
 }
 
@@ -183,8 +186,27 @@ button {
   background-color: hsl(0°, 6%, 82%);
 }
 
-.button2 {
-    background-color: hsl(48°, 9%, 89%);
+.keyboard-container__button2 {
+  background-color: hsl(48°, 9%, 89%);
+  color: hsl(60°, 12%, 17%);
+}
+
+.button_delreset-color2 {
+  background-color: hsl(185°, 41%, 37%);
+  color: $white-color;
+}
+
+.button_delreset-color2:active {
+  background-color: hsl(185°, 41%, 56%);
+}
+
+.button_equal-color2 {
+  background-color: hsl(25°, 99%, 39%);
+  color: $white-color;
+}
+
+.button_equal-color2:active {
+  background-color: hsl(25°, 100%, 61%);
 }
 
 // Theme 3
@@ -205,15 +227,54 @@ button {
 }
 
 .input3 {
-    color: hsl(51°, 88%, 59%);
+  color: hsl(51°, 88%, 59%);
 }
 
 .keyboard-container3,
 .screen3,
-.calc-container__switch-button_background3 {
-    background-color: hsl(269°, 74%, 12%);
+.calc-container__switch-button_background3,
+.button_equal-color3 {
+  background-color: hsl(269°, 74%, 12%);
 }
 
-.button3 {
-    background-color: hsl(269°, 48%, 20%);
+.keyboard-container__button3 {
+  background-color: hsl(269°, 48%, 20%);
+  color: hsl(55°, 100%, 64%);
+  box-shadow: 0px 4px hsl(288°, 59%, 35%);
+}
+
+.keyboard-container__button3:active {
+  background-color: hsl(267°, 54%, 44%);
+}
+
+.button_delreset-color3 {
+  background-color: hsl(281°, 89%, 26%);
+  color: $white-color;
+  box-shadow: 0px 4px hsl(285°, 93%, 53%);
+}
+
+.button_delreset-color3:active {
+  background-color: hsl(280°, 56%, 44%);
+}
+
+.button_equal-color3 {
+  background-color: hsl(176°, 100%, 44%);
+  color: $white-color;
+  box-shadow: 0px 4px hsl(176°, 100%, 68%);
+}
+
+.button_equal-color3:active {
+  background-color: hsl(177°, 100%, 79%);
+}
+
+// Responsive Design
+
+@media (max-width: 450px) {
+  .calc-container {
+    padding: 30px;
+  }
+  .keyboard-container__button {
+    min-width: 60px;
+    transition: .5s linear;
+  }
 }

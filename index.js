@@ -104,7 +104,7 @@ function calculate() {
   }
 }
 
-// Theme switcher
+// Theme switcher - Variables
 
 const switcher = document.querySelector(
   ".calc-container__switch-button_background"
@@ -116,18 +116,7 @@ const keyboardContainerRows = keyboardContainer.querySelectorAll(
   ".keyboard-container__row"
 );
 
-function addClassToButtons(button) {
-  button.classList.add("button3");
-}
-
-keyboardContainerRows.forEach((keyboardContainerRow) => {
-  const button = Array.from(keyboardContainerRow.querySelectorAll("button"));
-  button.forEach(addClassToButtons);
-  // console.log(button);
-});
-
-// console.log(keyboardContainer);
-// console.log(keyboardContainerRows);
+// Theme switcher - Function
 
 switcher.addEventListener("click", function switchTheme() {
   if (!body.classList.contains("body2") && !body.classList.contains("body3")) {
@@ -140,7 +129,27 @@ switcher.addEventListener("click", function switchTheme() {
     keyboardContainer.classList.add("keyboard-container2");
     result.classList.add("screen2", "input2");
 
-    addClassToButtons(button, "button2");
+    keyboardContainerRows.forEach((keyboardContainerRow) => {
+      const buttons = Array.from(
+        keyboardContainerRow.querySelectorAll("button")
+      );
+      buttons.forEach((button) => {
+        button.classList.add("keyboard-container__button2");
+      });
+      const delResetButton = Array.from(
+        keyboardContainerRow.querySelectorAll(".button_delreset-color")
+      );
+      delResetButton.forEach((button) => {
+        button.classList.add("button_delreset-color2");
+      });
+      const equalButton = Array.from(
+        keyboardContainerRow.querySelectorAll(".button_equal-color")
+      );
+      equalButton.forEach((button) => {
+        button.classList.add("button_equal-color2");
+      });
+    });
+
   } else if (
     body.classList.contains("body2") &&
     !body.classList.contains("body3")
@@ -153,6 +162,28 @@ switcher.addEventListener("click", function switchTheme() {
     switchButton.classList.add("calc-container__switch-button3");
     keyboardContainer.classList.add("keyboard-container3");
     result.classList.add("screen3", "input3");
+
+    keyboardContainerRows.forEach((keyboardContainerRow) => {
+        const buttons = Array.from(
+          keyboardContainerRow.querySelectorAll("button")
+        );
+        buttons.forEach((button) => {
+          button.classList.add("keyboard-container__button3");
+        });
+        const delResetButton = Array.from(
+          keyboardContainerRow.querySelectorAll(".button_delreset-color")
+        );
+        delResetButton.forEach((button) => {
+          button.classList.add("button_delreset-color3");
+        });
+        const equalButton = Array.from(
+          keyboardContainerRow.querySelectorAll(".button_equal-color")
+        );
+        equalButton.forEach((button) => {
+          button.classList.add("button_equal-color3");
+        });
+      });
+
   } else if (
     body.classList.contains("body2") &&
     body.classList.contains("body3")
@@ -174,6 +205,27 @@ switcher.addEventListener("click", function switchTheme() {
       "keyboard-container3"
     );
     result.classList.remove("screen2", "screen3", "input2", "input3");
+
+    keyboardContainerRows.forEach((keyboardContainerRow) => {
+        const buttons = Array.from(
+          keyboardContainerRow.querySelectorAll("button")
+        );
+        buttons.forEach((button) => {
+          button.classList.remove("keyboard-container__button2", "keyboard-container__button3");
+        });
+        const delResetButton = Array.from(
+          keyboardContainerRow.querySelectorAll(".button_delreset-color")
+        );
+        delResetButton.forEach((button) => {
+          button.classList.remove("button_delreset-color3", "button_delreset-color3");
+        });
+        const equalButton = Array.from(
+          keyboardContainerRow.querySelectorAll(".button_equal-color")
+        );
+        equalButton.forEach((button) => {
+          button.classList.remove("button_equal-color2", "button_equal-color3");
+        });
+      });
+
   }
-  //   keyboardBtns.forEach((btn) => btn.classList.add("button2"));
 });
