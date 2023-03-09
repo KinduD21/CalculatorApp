@@ -155,6 +155,8 @@ button {
   min-width: 80px;
   -webkit-box-shadow: 0px 4px hsl(25deg, 15.8%, 64.1%);
           box-shadow: 0px 4px hsl(25deg, 15.8%, 64.1%);
+  -webkit-transition: 0.5s linear;
+  transition: 0.5s linear;
 }
 .keyboard-container__button:active {
   background-color: hsl(0deg, 0%, 100%);
@@ -292,7 +294,7 @@ button {
   background-color: hsl(177deg, 100%, 79%);
 }
 
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   .calc-container {
     padding: 30px;
   }
@@ -300,5 +302,15 @@ button {
     min-width: 60px;
     -webkit-transition: 0.5s linear;
     transition: 0.5s linear;
+    font-size: 18px;
+  }
+}
+@media (max-width: 385px) {
+  .keyboard-container__button {
+    min-width: 50px;
+    min-height: 40px;
+    -webkit-transition: 0.5s linear;
+    transition: 0.5s linear;
+    font-size: 16px;
   }
 }
