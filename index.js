@@ -217,7 +217,7 @@ switcher.addEventListener("click", function switchTheme() {
           keyboardContainerRow.querySelectorAll(".button_delreset-color")
         );
         delResetButton.forEach((button) => {
-          button.classList.remove("button_delreset-color3", "button_delreset-color3");
+          button.classList.remove("button_delreset-color2", "button_delreset-color3");
         });
         const equalButton = Array.from(
           keyboardContainerRow.querySelectorAll(".button_equal-color")

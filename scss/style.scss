@@ -33,6 +33,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: .25s linear;
 }
 
 button {
@@ -136,7 +137,7 @@ button {
   &:active {
     background-color: $white-color;
   }
-  transition: 0.5s linear;
+  transition: 0.25s linear;
 }
 
 .button_delreset-color {
@@ -276,7 +277,7 @@ button {
   }
   .keyboard-container__button {
     min-width: 60px;
-    transition: 0.5s linear;
+    transition: 0.25s linear;
     font-size: 18px;
   }
 }
@@ -285,7 +286,7 @@ button {
   .keyboard-container__button {
     min-width: 50px;
     min-height: 40px;
-    transition: 0.5s linear;
+    transition: 0.25s linear;
     font-size: 16px;
   }
 }

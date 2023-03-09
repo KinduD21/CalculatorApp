@@ -24,6 +24,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 0.25s linear;
+  transition: 0.25s linear;
 }
 
 button {
@@ -155,8 +157,8 @@ button {
   min-width: 80px;
   -webkit-box-shadow: 0px 4px hsl(25deg, 15.8%, 64.1%);
           box-shadow: 0px 4px hsl(25deg, 15.8%, 64.1%);
-  -webkit-transition: 0.5s linear;
-  transition: 0.5s linear;
+  -webkit-transition: 0.25s linear;
+  transition: 0.25s linear;
 }
 .keyboard-container__button:active {
   background-color: hsl(0deg, 0%, 100%);
@@ -300,8 +302,8 @@ button {
   }
   .keyboard-container__button {
     min-width: 60px;
-    -webkit-transition: 0.5s linear;
-    transition: 0.5s linear;
+    -webkit-transition: 0.25s linear;
+    transition: 0.25s linear;
     font-size: 18px;
   }
 }
@@ -309,8 +311,8 @@ button {
   .keyboard-container__button {
     min-width: 50px;
     min-height: 40px;
-    -webkit-transition: 0.5s linear;
-    transition: 0.5s linear;
+    -webkit-transition: 0.25s linear;
+    transition: 0.25s linear;
     font-size: 16px;
   }
 }
