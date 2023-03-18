@@ -1,7 +1,7 @@
 const body = document.querySelector("body");
+const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
-const h6 = document.querySelector("h6");
-const p = document.querySelectorAll("p");
+const li = document.querySelectorAll("li");
 
 // Calc Function
 
@@ -121,9 +121,9 @@ const keyboardContainerRows = keyboardContainer.querySelectorAll(
 switcher.addEventListener("click", function switchTheme() {
   if (!body.classList.contains("body2") && !body.classList.contains("body3")) {
     body.classList.add("body2");
+    h1.classList.add("h1_theme2");
     h2.classList.add("h2_theme2");
-    h6.classList.add("h6_theme2");
-    p.forEach((el) => el.classList.add("p_theme2"));
+    li.forEach((el) => el.classList.add("li_theme2"));
     switcher.classList.add("calc-container__switch-button_background2");
     switchButton.classList.add("calc-container__switch-button2");
     keyboardContainer.classList.add("keyboard-container2");
@@ -155,9 +155,9 @@ switcher.addEventListener("click", function switchTheme() {
     !body.classList.contains("body3")
   ) {
     body.classList.add("body3");
+    h1.classList.add("h1_theme3");
     h2.classList.add("h2_theme3");
-    h6.classList.add("h6_theme3");
-    p.forEach((el) => el.classList.add("p_theme3"));
+    li.forEach((el) => el.classList.add("li_theme3"));
     switcher.classList.add("calc-container__switch-button_background3");
     switchButton.classList.add("calc-container__switch-button3");
     keyboardContainer.classList.add("keyboard-container3");
@@ -189,9 +189,9 @@ switcher.addEventListener("click", function switchTheme() {
     body.classList.contains("body3")
   ) {
     body.classList.remove("body2", "body3");
+    h1.classList.remove("h1_theme2", "h1_theme3");
     h2.classList.remove("h2_theme2", "h2_theme3");
-    h6.classList.remove("h6_theme2", "h6_theme3");
-    p.forEach((el) => el.classList.remove("p_theme2", "p_theme3"));
+    li.forEach((el) => el.classList.remove("li_theme2", "li_theme3"));
     switcher.classList.remove(
       "calc-container__switch-button_background2",
       "calc-container__switch-button_background3"

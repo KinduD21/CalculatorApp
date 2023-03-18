@@ -1,4 +1,4 @@
-@import "../css/nullstyle.css";
+@import "./_base.scss";
 
 // Variables
 
@@ -18,12 +18,26 @@ h3,
 h4,
 h5,
 h6,
-p,
+li,
 button,
 input {
   color: $white-color;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 14px;
+}
+
+li {
+   margin: 0;
+   text-indent: 0;
+   list-style-type: none;
 }
 
 // Main Part
@@ -33,7 +47,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: .25s linear;
+  transition: 0.25s linear;
 }
 
 button {
@@ -62,8 +76,8 @@ button {
   & .calc-container__switch-numbers {
     display: flex;
     position: relative;
-    top: -5px;
-    & p {
+    top: -30px;
+    & li {
       padding: 0px 10px;
     }
   }
@@ -163,9 +177,9 @@ button {
   background-color: hsl(0°, 0%, 90%);
 }
 
+.h1_theme2,
 .h2_theme2,
-.h6_theme2,
-.p_theme2 {
+.li_theme2 {
   color: hsl(50°, 6%, 19%);
 }
 
@@ -196,19 +210,17 @@ button {
 .button_delreset-color2 {
   background-color: hsl(185°, 41%, 37%);
   color: $white-color;
-}
-
-.button_delreset-color2:active {
-  background-color: hsl(185°, 41%, 56%);
+  &:active {
+    background-color: hsl(185°, 41%, 56%);
+  }
 }
 
 .button_equal-color2 {
   background-color: hsl(25°, 99%, 39%);
   color: $white-color;
-}
-
-.button_equal-color2:active {
-  background-color: hsl(25°, 100%, 61%);
+  &:active {
+    background-color: hsl(25°, 100%, 61%);
+  }
 }
 
 // Theme 3
@@ -217,9 +229,9 @@ button {
   background-color: hsl(268°, 75%, 9%);
 }
 
+.h1_theme3,
 .h2_theme3,
-.h6_theme3,
-.p_theme3 {
+.li_theme3 {
   color: hsl(55°, 100%, 64%);
 }
 
@@ -243,30 +255,27 @@ button {
   background-color: hsl(269°, 48%, 20%);
   color: hsl(55°, 100%, 64%);
   box-shadow: 0px 4px hsl(288°, 59%, 35%);
-}
-
-.keyboard-container__button3:active {
-  background-color: hsl(267°, 54%, 44%);
+  &:active {
+    background-color: hsl(267°, 54%, 44%);
+  }
 }
 
 .button_delreset-color3 {
   background-color: hsl(281°, 89%, 26%);
   color: $white-color;
   box-shadow: 0px 4px hsl(285°, 93%, 53%);
-}
-
-.button_delreset-color3:active {
-  background-color: hsl(280°, 56%, 44%);
+  &:active {
+    background-color: hsl(280°, 56%, 44%);
+  }
 }
 
 .button_equal-color3 {
   background-color: hsl(176°, 100%, 44%);
   color: $white-color;
   box-shadow: 0px 4px hsl(176°, 100%, 68%);
-}
-
-.button_equal-color3:active {
-  background-color: hsl(177°, 100%, 79%);
+  &:active {
+    background-color: hsl(177°, 100%, 79%);
+  }
 }
 
 // Responsive Design

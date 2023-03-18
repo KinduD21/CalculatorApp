@@ -1,16 +1,94 @@
-@import "../css/nullstyle.css";
+/* reset.css */
+/* normalize.css */
+/* modernize */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p,
+li,
 button,
 input {
   color: hsl(0deg, 0%, 100%);
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 14px;
+}
+
+li {
+  margin: 0;
+  text-indent: 0;
+  list-style-type: none;
 }
 
 body {
@@ -72,9 +150,9 @@ button {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  top: -5px;
+  top: -30px;
 }
-.calc-container__switcher-wrapper .calc-container__switch-numbers p {
+.calc-container__switcher-wrapper .calc-container__switch-numbers li {
   padding: 0px 10px;
 }
 
@@ -188,9 +266,9 @@ button {
   background-color: hsl(0deg, 0%, 90%);
 }
 
+.h1_theme2,
 .h2_theme2,
-.h6_theme2,
-.p_theme2 {
+.li_theme2 {
   color: hsl(50deg, 6%, 19%);
 }
 
@@ -223,7 +301,6 @@ button {
   background-color: hsl(185deg, 41%, 37%);
   color: hsl(0deg, 0%, 100%);
 }
-
 .button_delreset-color2:active {
   background-color: hsl(185deg, 41%, 56%);
 }
@@ -232,7 +309,6 @@ button {
   background-color: hsl(25deg, 99%, 39%);
   color: hsl(0deg, 0%, 100%);
 }
-
 .button_equal-color2:active {
   background-color: hsl(25deg, 100%, 61%);
 }
@@ -241,9 +317,9 @@ button {
   background-color: hsl(268deg, 75%, 9%);
 }
 
+.h1_theme3,
 .h2_theme3,
-.h6_theme3,
-.p_theme3 {
+.li_theme3 {
   color: hsl(55deg, 100%, 64%);
 }
 
@@ -269,7 +345,6 @@ button {
   -webkit-box-shadow: 0px 4px hsl(288deg, 59%, 35%);
           box-shadow: 0px 4px hsl(288deg, 59%, 35%);
 }
-
 .keyboard-container__button3:active {
   background-color: hsl(267deg, 54%, 44%);
 }
@@ -280,7 +355,6 @@ button {
   -webkit-box-shadow: 0px 4px hsl(285deg, 93%, 53%);
           box-shadow: 0px 4px hsl(285deg, 93%, 53%);
 }
-
 .button_delreset-color3:active {
   background-color: hsl(280deg, 56%, 44%);
 }
@@ -291,7 +365,6 @@ button {
   -webkit-box-shadow: 0px 4px hsl(176deg, 100%, 68%);
           box-shadow: 0px 4px hsl(176deg, 100%, 68%);
 }
-
 .button_equal-color3:active {
   background-color: hsl(177deg, 100%, 79%);
 }
