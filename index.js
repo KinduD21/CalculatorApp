@@ -119,6 +119,9 @@ const keyboardContainerRows = keyboardContainer.querySelectorAll(
 // Theme switcher - Function
 
 switcher.addEventListener("click", function switchTheme() {
+  // body.addClass('body2')
+  // css -> body.theme-1 h1 { color:red }
+  // css -> body.theme-2 h1 { color: green }
   if (!body.classList.contains("body2") && !body.classList.contains("body3")) {
     body.classList.add("body2");
     h1.classList.add("h1_theme2");

@@ -127,6 +127,11 @@ button {
   max-width: -moz-min-content;
   max-width: min-content;
 }
+@media (max-width: 768px) {
+  .calc-container {
+    padding: 30px;
+  }
+}
 .calc-container .calc-container__theme-switcher {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -241,6 +246,14 @@ button {
 .keyboard-container__button:active {
   background-color: hsl(0deg, 0%, 100%);
 }
+@media (max-width: 768px) {
+  .keyboard-container__button {
+    min-width: 60px;
+    -webkit-transition: 0.25s linear;
+    transition: 0.25s linear;
+    font-size: 18px;
+  }
+}
 
 .button_delreset-color {
   background-color: hsl(225deg, 20.9%, 49.6%);
@@ -262,130 +275,109 @@ button {
   background-color: hsl(6deg, 93%, 67%);
 }
 
-.body2 {
+.theme-2 {
   background-color: hsl(0deg, 0%, 90%);
 }
 
-.h1_theme2,
-.h2_theme2,
-.li_theme2 {
+body.theme-2 h1,
+body.theme-2 h2,
+body.theme-2 li {
   color: hsl(50deg, 6%, 19%);
 }
 
-.calc-container__switch-button2 {
+body.theme-2 .calc-container__switch-button {
   left: 35px;
   -webkit-transition: 0.25s linear;
   transition: 0.25s linear;
   background-color: hsl(25deg, 94%, 61%);
 }
 
-.screen2 {
+body.theme-2 .screen {
   background-color: hsl(0deg, 0%, 93%);
 }
 
-.input2 {
+body.theme-2 input {
   color: hsl(60deg, 10%, 20%);
 }
 
-.keyboard-container2,
-.calc-container__switch-button_background2 {
+body.theme-2 .keyboard-container,
+body.theme-2 .calc-container__switch-button_background {
   background-color: hsl(0deg, 6%, 82%);
 }
 
-.keyboard-container__button2 {
+body.theme-2 .keyboard-container__button {
   background-color: hsl(48deg, 9%, 89%);
   color: hsl(60deg, 12%, 17%);
 }
 
-.button_delreset-color2 {
+body.theme-2 .button_delreset-color {
   background-color: hsl(185deg, 41%, 37%);
   color: hsl(0deg, 0%, 100%);
 }
-.button_delreset-color2:active {
+body.theme-2 .button_delreset-color:active {
   background-color: hsl(185deg, 41%, 56%);
 }
 
-.button_equal-color2 {
+body.theme-2 .button_equal-color {
   background-color: hsl(25deg, 99%, 39%);
   color: hsl(0deg, 0%, 100%);
 }
-.button_equal-color2:active {
+body.theme-2 .button_equal-color:active {
   background-color: hsl(25deg, 100%, 61%);
 }
 
-.body3 {
+.theme-3 {
   background-color: hsl(268deg, 75%, 9%);
 }
 
-.h1_theme3,
-.h2_theme3,
-.li_theme3 {
+body.theme-3 h1,
+body.theme-3 h2,
+body.theme-3 li {
   color: hsl(55deg, 100%, 64%);
 }
 
-.calc-container__switch-button3 {
+body.theme-3 .calc-container__switch-button {
   left: 65px;
   background-color: hsl(179deg, 100%, 78%);
 }
 
-.input3 {
+body.theme-3 input {
   color: hsl(51deg, 88%, 59%);
 }
 
-.keyboard-container3,
-.screen3,
-.calc-container__switch-button_background3,
-.button_equal-color3 {
+body.theme-3 .keyboard-container,
+body.theme-3 .screen,
+body.theme-3 .calc-container__switch-button_background,
+body.theme-3 .button_equal-color3 {
   background-color: hsl(269deg, 74%, 12%);
 }
 
-.keyboard-container__button3 {
+body.theme-3 .keyboard-container__button {
   background-color: hsl(269deg, 48%, 20%);
   color: hsl(55deg, 100%, 64%);
   -webkit-box-shadow: 0px 4px hsl(288deg, 59%, 35%);
           box-shadow: 0px 4px hsl(288deg, 59%, 35%);
 }
-.keyboard-container__button3:active {
+body.theme-3 .keyboard-container__button:active {
   background-color: hsl(267deg, 54%, 44%);
 }
 
-.button_delreset-color3 {
+body.theme-3 .button_delreset-color {
   background-color: hsl(281deg, 89%, 26%);
   color: hsl(0deg, 0%, 100%);
   -webkit-box-shadow: 0px 4px hsl(285deg, 93%, 53%);
           box-shadow: 0px 4px hsl(285deg, 93%, 53%);
 }
-.button_delreset-color3:active {
+body.theme-3 .button_delreset-color:active {
   background-color: hsl(280deg, 56%, 44%);
 }
 
-.button_equal-color3 {
+body.theme-3 .button_equal-color {
   background-color: hsl(176deg, 100%, 44%);
   color: hsl(0deg, 0%, 100%);
   -webkit-box-shadow: 0px 4px hsl(176deg, 100%, 68%);
           box-shadow: 0px 4px hsl(176deg, 100%, 68%);
 }
-.button_equal-color3:active {
+body.theme-3 .button_equal-color:active {
   background-color: hsl(177deg, 100%, 79%);
-}
-
-@media (max-width: 768px) {
-  .calc-container {
-    padding: 30px;
-  }
-  .keyboard-container__button {
-    min-width: 60px;
-    -webkit-transition: 0.25s linear;
-    transition: 0.25s linear;
-    font-size: 18px;
-  }
-}
-@media (max-width: 385px) {
-  .keyboard-container__button {
-    min-width: 50px;
-    min-height: 40px;
-    -webkit-transition: 0.25s linear;
-    transition: 0.25s linear;
-    font-size: 16px;
-  }
 }
