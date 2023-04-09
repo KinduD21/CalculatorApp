@@ -144,7 +144,7 @@ button {
   }
 }
 
-.keyboard-container__button {
+.keyboard-container__row button {
   color: hsl(221, 14%, 31%);
   background-color: $button-bg-color;
   border-radius: 10px;
@@ -162,7 +162,7 @@ button {
   }
 }
 
-.button_delreset-color {
+button.button_delreset-color {
   background-color: $delreset-color;
   box-shadow: 0px 4px hsl(224, 29.3%, 35.5%);
   color: $white-color;
@@ -170,7 +170,7 @@ button {
     background-color: hsl(224°, 51%, 76%);
   }
 }
-.button_equal-color {
+button.button_equal-color {
   background-color: $equal-circle-color;
   box-shadow: 0px 4px hsl(6, 73.3%, 32.4%);
   color: $white-color;
@@ -210,12 +210,12 @@ body.theme-2 .calc-container__switch-button_background {
   background-color: hsl(0°, 6%, 82%);
 }
 
-body.theme-2 .keyboard-container__button {
+body.theme-2 .keyboard-container__row button {
   background-color: hsl(48°, 9%, 89%);
   color: hsl(60°, 12%, 17%);
 }
 
-body.theme-2 .button_delreset-color {
+body.theme-2 button.button_delreset-color {
   background-color: hsl(185°, 41%, 37%);
   color: $white-color;
   &:active {
@@ -223,7 +223,7 @@ body.theme-2 .button_delreset-color {
   }
 }
 
-body.theme-2 .button_equal-color {
+body.theme-2 button.button_equal-color {
   background-color: hsl(25°, 99%, 39%);
   color: $white-color;
   &:active {
@@ -259,7 +259,7 @@ body.theme-3 .button_equal-color3 {
   background-color: hsl(269°, 74%, 12%);
 }
 
-body.theme-3 .keyboard-container__button {
+body.theme-3 .keyboard-container__row button {
   background-color: hsl(269°, 48%, 20%);
   color: hsl(55°, 100%, 64%);
   box-shadow: 0px 4px hsl(288°, 59%, 35%);
@@ -268,7 +268,7 @@ body.theme-3 .keyboard-container__button {
   }
 }
 
-body.theme-3 .button_delreset-color {
+body.theme-3 button.button_delreset-color {
   background-color: hsl(281°, 89%, 26%);
   color: $white-color;
   box-shadow: 0px 4px hsl(285°, 93%, 53%);
@@ -277,7 +277,7 @@ body.theme-3 .button_delreset-color {
   }
 }
 
-body.theme-3 .button_equal-color {
+body.theme-3 button.button_equal-color {
   background-color: hsl(176°, 100%, 44%);
   color: $white-color;
   box-shadow: 0px 4px hsl(176°, 100%, 68%);

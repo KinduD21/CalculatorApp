@@ -28,4 +28,4 @@ class themeSwitcher {
   }
 }
 
-const myObj = new themeSwitcher();
+export default themeSwitcher;

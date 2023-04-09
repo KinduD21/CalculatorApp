@@ -1,90 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- TODO: favicon generator -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    
-    <link rel="stylesheet" href="./css/style.css" />
+        <!-- TODO: favicon generator -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
 
-    <title>Calculator App</title>
-  </head>
-  <body>
-    <main class="calc-container">
-      <div class="calc-container__theme-switcher">
-        <h1>calc</h1>
-        <div class="calc-container__switcher-wrapper">
-          <h2>THEME</h2>
-          <nav class="calc-container__switch-numbers">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <div class="calc-container__switch-button_background">
-              <button class="calc-container__switch-button"></button>
+        <link rel="stylesheet" href="./css/style.css" />
+
+        <title>Calculator App</title>
+    </head>
+    <body>
+        <main class="calc-container">
+            <div class="calc-container__theme-switcher">
+                <h1>calc</h1>
+                <div class="calc-container__switcher-wrapper">
+                    <h2>THEME</h2>
+                    <nav class="calc-container__switch-numbers">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <div class="calc-container__switch-button_background">
+                            <button
+                                class="calc-container__switch-button"
+                            ></button>
+                        </div>
+                    </nav>
+                </div>
             </div>
-          </nav>
-        </div>
-      </div>
 
-      <input type="text" name="calc" readonly id="screen" class="screen" />
+            <input
+                type="text"
+                name="calc"
+                readonly
+                id="screen"
+                class="screen"
+            />
 
-      <div class="keyboard-container">
-        <div class="keyboard-container__row">
-          <button id="seven" class="keyboard-container__button">7</button>
-          <button id="eight" class="keyboard-container__button">8</button>
-          <button id="nine" class="keyboard-container__button">9</button>
-          <button
-            id="delete"
-            class="keyboard-container__button button_delreset-color"
-          >
-            DEL
-          </button>
-        </div>
-        <div class="keyboard-container__row">
-          <button id="four" class="keyboard-container__button">4</button>
-          <button id="five" class="keyboard-container__button">5</button>
-          <button id="six" class="keyboard-container__button">6</button>
-          <button id="add" class="keyboard-container__button">+</button>
-        </div>
-        <div class="keyboard-container__row">
-          <button id="one" class="keyboard-container__button">1</button>
-          <button id="two" class="keyboard-container__button">2</button>
-          <button id="three" class="keyboard-container__button">3</button>
-          <button id="subtract" class="keyboard-container__button">-</button>
-        </div>
-        <div class="keyboard-container__row">
-          <button id="decimal" class="keyboard-container__button">.</button>
-          <button id="zero" class="keyboard-container__button">0</button>
-          <button id="divide" class="keyboard-container__button">/</button>
-          <button id="multiply" class="keyboard-container__button">x</button>
-        </div>
-        <div
-          class="keyboard-container__row keyboard-container__row_main-bottom"
-        >
-          <button
-            id="reset"
-            class="keyboard-container__button button_delreset-color"
-          >
-            RESET
-          </button>
-          <button
-            id="equals"
-            class="keyboard-container__button button_equal-color"
-          >
-            =
-          </button>
-        </div>
-      </div>
-    </main>
+            <div class="keyboard-container">
+                <div class="keyboard-container__row">
+                    <button data-number="7">
+                        7
+                    </button>
+                    <button data-number="8">
+                        8
+                    </button>
+                    <button data-number="9">
+                        9
+                    </button>
+                    <button
+                        class="button_delreset-color"
+                        data-operation="del"
+                    >
+                        DEL
+                    </button>
+                </div>
+                <div class="keyboard-container__row">
+                    <button data-number="4">4</button>
+                    <button data-number="5">5</button>
+                    <button data-number="6">6</button>
+                    <button data-operation="add">+</button>
+                </div>
+                <div class="keyboard-container__row">
+                    <button data-number="1">1</button>
+                    <button data-number="2">2</button>
+                    <button data-number="3">3</button>
+                    <button data-operation="subtract">-</button>
+                </div>
+                <div class="keyboard-container__row">
+                    <button data-number="decimal">.</button>
+                    <button data-number="0">0</button>
+                    <button data-operation="divide">/</button>
+                    <button data-operation="multiply">x</button>
+                </div>
+                <div
+                    class="keyboard-container__row keyboard-container__row_main-bottom"
+                >
+                    <button
+                        class="button_delreset-color"
+                        data-operation="reset"
+                    >
+                        RESET
+                    </button>
+                    <button class="button_equal-color" data-operation="equals">
+                        =
+                    </button>
+                </div>
+            </div>
+        </main>
 
-    <!-- <script src="./index.js"></script> -->
-    <script src="./js/main.js" type="module"></script>
-  </body>
+        <!-- <script src="./index.js"></script> -->
+        <script src="./js/main.js" type="module"></script>
+    </body>
 </html>
