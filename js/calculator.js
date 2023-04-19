@@ -2,6 +2,7 @@ class Calculator {
   constructor() {
     this.screenElement = document.querySelector("#screen");
     this.rows = document.querySelectorAll(".keyboard-container__row");
+    this.isDotAlreadyThere = false;
 
     this.rows.forEach((row) => {
       row.addEventListener("click", this.userInput.bind(this));
@@ -16,36 +17,25 @@ class Calculator {
   }
 
   inputNumber(number) {
+    if (this.screenElement.value !== "Error") {
+      if (this.screenElement.value === "") {
+        this.screenElement.value = "0";
+      } else if (this.screenElement.value === "0") {
+        this.screenElement.value = "";
+      }
+    } else if (this.screenElement.value === "Error") {
+      this.screenElement.value = "";
+    }
     this.screenElement.value += number;
-
-    // const currentInput = this.screenElement.value;
-    // const lastCharacter = currentInput[currentInput.length - 1];
-
-    // if (lastCharacter === "." && number === ".") {
-    //   // If the last character is already a decimal point and the user tries to input another decimal point
-    //   return; // Do not append the additional decimal point
-    // }
-
-    // if (currentInput === "" && number !== ".") {
-    //   // If the current input is "0" and the user tries to input a digit other than a decimal point
-    //   this.screenElement.value = number; // Replace the current input with the new digit
-    // } else if (currentInput === "" && number === ".") {
-    //   // If the current input is empty and the user tries to input a decimal point
-    //   return; // Set the input as "0." to start a decimal number
-    // }
-    // else if (!/^\d+(\.\d*)?$/.test(currentInput + number)) {
-    //   // If the current input and the new number do not form a valid decimal number
-    //   return; // Do not append the new number
-    // } else {
-    //   this.screenElement.value += number;
-    // }
   }
 
   inputOperation(operationName) {
-    // let operation = null;
     let operators = ["+", "-", "/", "*", "."];
+    let isSecondOperator = operators.findIndex((o) => {
+      return this.screenElement.value.includes(o);
+    });
 
-    const isOpsNotIncluded = (ops) => {
+    const isLastSymbolNotOps = (ops) => {
       let lastSymbol = this.screenElement.value.slice(
         this.screenElement.value.length - 1
       );
@@ -56,73 +46,97 @@ class Calculator {
       }
     };
 
-    if (operationName === "add") {
-      if (this.screenElement.value !== "") {
-        if (isOpsNotIncluded(operators)) {
-          // operation = "+";
-          // this.screenElement.value += "+";
-          // split + join instead of "="
-          this.screenElement.value += "+";
-        }
-      }
+    if (operationName === "reset") {
+      this.screenElement.value = "0";
+      isSecondOperator = -1;
+      this.isDotAlreadyThere = false;
     }
 
-    if (operationName === "subtract") {
-      if (this.screenElement.value !== "") {
-        if (isOpsNotIncluded(operators)) {
-          // operation = "-";
-          this.screenElement.value += "-";
-        }
+    if (operationName === "del") {
+      if (this.screenElement.value === "0") {
+        return;
       }
-    }
-
-    if (operationName === "divide") {
-      if (this.screenElement.value !== "") {
-        if (isOpsNotIncluded(operators)) {
-          // operation = "/";
-          this.screenElement.value += "/";
+      if (this.screenElement.value != "Error") {
+        let currentResult = this.screenElement.value;
+        this.screenElement.value = currentResult.substring(
+          0,
+          currentResult.length - 1
+        );
+        isSecondOperator = -1;
+        this.isDotAlreadyThere = false;
+        if (this.screenElement.value === "") {
+          this.screenElement.value = "0";
         }
-      }
-    }
-
-    if (operationName === "multiply") {
-      if (this.screenElement.value !== "") {
-        if (isOpsNotIncluded(operators)) {
-          // operation = "*";
-          this.screenElement.value += "*";
-        }
+      } else {
+        this.screenElement.value = "0";
       }
     }
 
     if (operationName === ".") {
-      if (this.screenElement.value !== "") {
-        if (isOpsNotIncluded(operators)) {
-          // operation = ".";
+      if (this.screenElement.value !== "Error") {
+        if (
+          isLastSymbolNotOps(operators) &&
+          isLastSymbolNotOps(["."]) &&
+          !this.isDotAlreadyThere
+        ) {
           this.screenElement.value += ".";
+          isSecondOperator = -1;
+          this.isDotAlreadyThere = true;
         }
       }
     }
 
-    if (operationName === "equals") {
-      let currentResult = this.screenElement.value;
-      try {
+    if (operationName === "equals" || isSecondOperator !== -1) {
+      if (isLastSymbolNotOps(operators) && isLastSymbolNotOps(["."])) {
+        let currentResult = this.screenElement.value;
+        if (currentResult === "Error") {
+          return;
+        }
         let answer = math.evaluate(currentResult);
-        this.screenElement.value = answer;
-      } catch (error) {
-        currentResult = "Error";
+        if (String(answer) === "Infinity" || String(answer) === "NaN") {
+          answer = "Error";
+          this.screenElement.value = answer;
+        }
+        if (
+          !Number.isInteger(answer) &&
+          String(answer).length > 4 &&
+          String(answer) !== "Error"
+        ) {
+          console.log(answer);
+          this.screenElement.value = answer.toFixed(3);
+        } else {
+          this.screenElement.value = answer;
+        }
+        isSecondOperator = -1;
       }
     }
 
-    if (operationName === "del") {
-      let currentResult = this.screenElement.value;
-      this.screenElement.value = currentResult.substring(
-        0,
-        currentResult.length - 1
-      );
+    if (operationName === "add" && this.screenElement.value !== "Error") {
+      if (isLastSymbolNotOps(operators)) {
+        this.screenElement.value += "+";
+        this.isDotAlreadyThere = false;
+      }
     }
 
-    if (operationName === "reset") {
-      this.screenElement.value = "";
+    if (operationName === "subtract" && this.screenElement.value !== "Error") {
+      if (isLastSymbolNotOps(operators)) {
+        this.screenElement.value += "-";
+        this.isDotAlreadyThere = false;
+      }
+    }
+
+    if (operationName === "divide" && this.screenElement.value !== "Error") {
+      if (isLastSymbolNotOps(operators)) {
+        this.screenElement.value += "/";
+        this.isDotAlreadyThere = false;
+      }
+    }
+
+    if (operationName === "multiply" && this.screenElement.value !== "Error") {
+      if (isLastSymbolNotOps(operators)) {
+        this.screenElement.value += "*";
+        this.isDotAlreadyThere = false;
+      }
     }
   }
 }
