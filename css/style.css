@@ -1,16 +1,94 @@
-@import "../css/nullstyle.css";
+/* reset.css */
+/* normalize.css */
+/* modernize */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p,
+li,
 button,
 input {
   color: hsl(0deg, 0%, 100%);
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 14px;
+}
+
+li {
+  margin: 0;
+  text-indent: 0;
+  list-style-type: none;
 }
 
 body {
@@ -49,6 +127,11 @@ button {
   max-width: -moz-min-content;
   max-width: min-content;
 }
+@media (max-width: 768px) {
+  .calc-container {
+    padding: 30px;
+  }
+}
 .calc-container .calc-container__theme-switcher {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -72,9 +155,9 @@ button {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  top: -5px;
+  top: -30px;
 }
-.calc-container__switcher-wrapper .calc-container__switch-numbers p {
+.calc-container__switcher-wrapper .calc-container__switch-numbers li {
   padding: 0px 10px;
 }
 
@@ -149,7 +232,7 @@ button {
   border-radius: 10px;
 }
 
-.keyboard-container__button {
+.keyboard-container__row button {
   color: hsl(221deg, 14%, 31%);
   background-color: hsl(32deg, 26.3%, 88.8%);
   border-radius: 10px;
@@ -160,159 +243,141 @@ button {
   -webkit-transition: 0.25s linear;
   transition: 0.25s linear;
 }
-.keyboard-container__button:active {
+.keyboard-container__row button:active {
   background-color: hsl(0deg, 0%, 100%);
 }
-
-.button_delreset-color {
-  background-color: hsl(225deg, 20.9%, 49.6%);
-  -webkit-box-shadow: 0px 4px hsl(224deg, 29.3%, 35.5%);
-          box-shadow: 0px 4px hsl(224deg, 29.3%, 35.5%);
-  color: hsl(0deg, 0%, 100%);
-}
-.button_delreset-color:active {
-  background-color: hsl(224deg, 51%, 76%);
-}
-
-.button_equal-color {
-  background-color: hsl(6deg, 63.6%, 50.4%);
-  -webkit-box-shadow: 0px 4px hsl(6deg, 73.3%, 32.4%);
-          box-shadow: 0px 4px hsl(6deg, 73.3%, 32.4%);
-  color: hsl(0deg, 0%, 100%);
-}
-.button_equal-color:active {
-  background-color: hsl(6deg, 93%, 67%);
-}
-
-.body2 {
-  background-color: hsl(0deg, 0%, 90%);
-}
-
-.h2_theme2,
-.h6_theme2,
-.p_theme2 {
-  color: hsl(50deg, 6%, 19%);
-}
-
-.calc-container__switch-button2 {
-  left: 35px;
-  -webkit-transition: 0.25s linear;
-  transition: 0.25s linear;
-  background-color: hsl(25deg, 94%, 61%);
-}
-
-.screen2 {
-  background-color: hsl(0deg, 0%, 93%);
-}
-
-.input2 {
-  color: hsl(60deg, 10%, 20%);
-}
-
-.keyboard-container2,
-.calc-container__switch-button_background2 {
-  background-color: hsl(0deg, 6%, 82%);
-}
-
-.keyboard-container__button2 {
-  background-color: hsl(48deg, 9%, 89%);
-  color: hsl(60deg, 12%, 17%);
-}
-
-.button_delreset-color2 {
-  background-color: hsl(185deg, 41%, 37%);
-  color: hsl(0deg, 0%, 100%);
-}
-
-.button_delreset-color2:active {
-  background-color: hsl(185deg, 41%, 56%);
-}
-
-.button_equal-color2 {
-  background-color: hsl(25deg, 99%, 39%);
-  color: hsl(0deg, 0%, 100%);
-}
-
-.button_equal-color2:active {
-  background-color: hsl(25deg, 100%, 61%);
-}
-
-.body3 {
-  background-color: hsl(268deg, 75%, 9%);
-}
-
-.h2_theme3,
-.h6_theme3,
-.p_theme3 {
-  color: hsl(55deg, 100%, 64%);
-}
-
-.calc-container__switch-button3 {
-  left: 65px;
-  background-color: hsl(179deg, 100%, 78%);
-}
-
-.input3 {
-  color: hsl(51deg, 88%, 59%);
-}
-
-.keyboard-container3,
-.screen3,
-.calc-container__switch-button_background3,
-.button_equal-color3 {
-  background-color: hsl(269deg, 74%, 12%);
-}
-
-.keyboard-container__button3 {
-  background-color: hsl(269deg, 48%, 20%);
-  color: hsl(55deg, 100%, 64%);
-  -webkit-box-shadow: 0px 4px hsl(288deg, 59%, 35%);
-          box-shadow: 0px 4px hsl(288deg, 59%, 35%);
-}
-
-.keyboard-container__button3:active {
-  background-color: hsl(267deg, 54%, 44%);
-}
-
-.button_delreset-color3 {
-  background-color: hsl(281deg, 89%, 26%);
-  color: hsl(0deg, 0%, 100%);
-  -webkit-box-shadow: 0px 4px hsl(285deg, 93%, 53%);
-          box-shadow: 0px 4px hsl(285deg, 93%, 53%);
-}
-
-.button_delreset-color3:active {
-  background-color: hsl(280deg, 56%, 44%);
-}
-
-.button_equal-color3 {
-  background-color: hsl(176deg, 100%, 44%);
-  color: hsl(0deg, 0%, 100%);
-  -webkit-box-shadow: 0px 4px hsl(176deg, 100%, 68%);
-          box-shadow: 0px 4px hsl(176deg, 100%, 68%);
-}
-
-.button_equal-color3:active {
-  background-color: hsl(177deg, 100%, 79%);
-}
-
 @media (max-width: 768px) {
-  .calc-container {
-    padding: 30px;
-  }
-  .keyboard-container__button {
+  .keyboard-container__row button {
     min-width: 60px;
     -webkit-transition: 0.25s linear;
     transition: 0.25s linear;
     font-size: 18px;
   }
 }
-@media (max-width: 385px) {
-  .keyboard-container__button {
-    min-width: 50px;
-    min-height: 40px;
-    -webkit-transition: 0.25s linear;
-    transition: 0.25s linear;
-    font-size: 16px;
-  }
+
+button.button_delreset-color {
+  background-color: hsl(225deg, 20.9%, 49.6%);
+  -webkit-box-shadow: 0px 4px hsl(224deg, 29.3%, 35.5%);
+          box-shadow: 0px 4px hsl(224deg, 29.3%, 35.5%);
+  color: hsl(0deg, 0%, 100%);
+}
+button.button_delreset-color:active {
+  background-color: hsl(224deg, 51%, 76%);
+}
+
+button.button_equal-color {
+  background-color: hsl(6deg, 63.6%, 50.4%);
+  -webkit-box-shadow: 0px 4px hsl(6deg, 73.3%, 32.4%);
+          box-shadow: 0px 4px hsl(6deg, 73.3%, 32.4%);
+  color: hsl(0deg, 0%, 100%);
+}
+button.button_equal-color:active {
+  background-color: hsl(6deg, 93%, 67%);
+}
+
+.theme-2 {
+  background-color: hsl(0deg, 0%, 90%);
+}
+
+body.theme-2 h1,
+body.theme-2 h2,
+body.theme-2 li {
+  color: hsl(50deg, 6%, 19%);
+}
+
+body.theme-2 .calc-container__switch-button {
+  left: 35px;
+  -webkit-transition: 0.25s linear;
+  transition: 0.25s linear;
+  background-color: hsl(25deg, 94%, 61%);
+}
+
+body.theme-2 .screen {
+  background-color: hsl(0deg, 0%, 93%);
+}
+
+body.theme-2 input {
+  color: hsl(60deg, 10%, 20%);
+}
+
+body.theme-2 .keyboard-container,
+body.theme-2 .calc-container__switch-button_background {
+  background-color: hsl(0deg, 6%, 82%);
+}
+
+body.theme-2 .keyboard-container__row button {
+  background-color: hsl(48deg, 9%, 89%);
+  color: hsl(60deg, 12%, 17%);
+}
+
+body.theme-2 button.button_delreset-color {
+  background-color: hsl(185deg, 41%, 37%);
+  color: hsl(0deg, 0%, 100%);
+}
+body.theme-2 button.button_delreset-color:active {
+  background-color: hsl(185deg, 41%, 56%);
+}
+
+body.theme-2 button.button_equal-color {
+  background-color: hsl(25deg, 99%, 39%);
+  color: hsl(0deg, 0%, 100%);
+}
+body.theme-2 button.button_equal-color:active {
+  background-color: hsl(25deg, 100%, 61%);
+}
+
+.theme-3 {
+  background-color: hsl(268deg, 75%, 9%);
+}
+
+body.theme-3 h1,
+body.theme-3 h2,
+body.theme-3 li {
+  color: hsl(55deg, 100%, 64%);
+}
+
+body.theme-3 .calc-container__switch-button {
+  left: 65px;
+  background-color: hsl(179deg, 100%, 78%);
+}
+
+body.theme-3 input {
+  color: hsl(51deg, 88%, 59%);
+}
+
+body.theme-3 .keyboard-container,
+body.theme-3 .screen,
+body.theme-3 .calc-container__switch-button_background,
+body.theme-3 .button_equal-color3 {
+  background-color: hsl(269deg, 74%, 12%);
+}
+
+body.theme-3 .keyboard-container__row button {
+  background-color: hsl(269deg, 48%, 20%);
+  color: hsl(55deg, 100%, 64%);
+  -webkit-box-shadow: 0px 4px hsl(288deg, 59%, 35%);
+          box-shadow: 0px 4px hsl(288deg, 59%, 35%);
+}
+body.theme-3 .keyboard-container__row button:active {
+  background-color: hsl(267deg, 54%, 44%);
+}
+
+body.theme-3 button.button_delreset-color {
+  background-color: hsl(281deg, 89%, 26%);
+  color: hsl(0deg, 0%, 100%);
+  -webkit-box-shadow: 0px 4px hsl(285deg, 93%, 53%);
+          box-shadow: 0px 4px hsl(285deg, 93%, 53%);
+}
+body.theme-3 button.button_delreset-color:active {
+  background-color: hsl(280deg, 56%, 44%);
+}
+
+body.theme-3 button.button_equal-color {
+  background-color: hsl(176deg, 100%, 44%);
+  color: hsl(0deg, 0%, 100%);
+  -webkit-box-shadow: 0px 4px hsl(176deg, 100%, 68%);
+          box-shadow: 0px 4px hsl(176deg, 100%, 68%);
+}
+body.theme-3 button.button_equal-color:active {
+  background-color: hsl(177deg, 100%, 79%);
 }

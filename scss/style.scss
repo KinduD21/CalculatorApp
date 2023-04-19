@@ -1,4 +1,4 @@
-@import "../css/nullstyle.css";
+@import "./_base.scss";
 
 // Variables
 
@@ -18,12 +18,26 @@ h3,
 h4,
 h5,
 h6,
-p,
+li,
 button,
 input {
   color: $white-color;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 14px;
+}
+
+li {
+  margin: 0;
+  text-indent: 0;
+  list-style-type: none;
 }
 
 // Main Part
@@ -33,7 +47,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: .25s linear;
+  transition: 0.25s linear;
 }
 
 button {
@@ -49,6 +63,9 @@ button {
   gap: 10px;
   padding: 20px;
   max-width: min-content;
+  @media (max-width: 768px) {
+    padding: 30px;
+  }
   .calc-container__theme-switcher {
     display: flex;
     justify-content: space-between;
@@ -62,8 +79,8 @@ button {
   & .calc-container__switch-numbers {
     display: flex;
     position: relative;
-    top: -5px;
-    & p {
+    top: -30px;
+    & li {
       padding: 0px 10px;
     }
   }
@@ -127,7 +144,7 @@ button {
   }
 }
 
-.keyboard-container__button {
+.keyboard-container__row button {
   color: hsl(221, 14%, 31%);
   background-color: $button-bg-color;
   border-radius: 10px;
@@ -138,9 +155,14 @@ button {
     background-color: $white-color;
   }
   transition: 0.25s linear;
+  @media (max-width: 768px) {
+    min-width: 60px;
+    transition: 0.25s linear;
+    font-size: 18px;
+  }
 }
 
-.button_delreset-color {
+button.button_delreset-color {
   background-color: $delreset-color;
   box-shadow: 0px 4px hsl(224, 29.3%, 35.5%);
   color: $white-color;
@@ -148,7 +170,7 @@ button {
     background-color: hsl(224°, 51%, 76%);
   }
 }
-.button_equal-color {
+button.button_equal-color {
   background-color: $equal-circle-color;
   box-shadow: 0px 4px hsl(6, 73.3%, 32.4%);
   color: $white-color;
@@ -159,134 +181,107 @@ button {
 
 // Theme 2
 
-.body2 {
+.theme-2 {
   background-color: hsl(0°, 0%, 90%);
 }
 
-.h2_theme2,
-.h6_theme2,
-.p_theme2 {
+body.theme-2 h1,
+body.theme-2 h2,
+body.theme-2 li {
   color: hsl(50°, 6%, 19%);
 }
 
-.calc-container__switch-button2 {
+body.theme-2 .calc-container__switch-button {
   left: 35px;
   transition: 0.25s linear;
   background-color: hsl(25°, 94%, 61%);
 }
 
-.screen2 {
+body.theme-2 .screen {
   background-color: hsl(0°, 0%, 93%);
 }
 
-.input2 {
+body.theme-2 input {
   color: hsl(60°, 10%, 20%);
 }
 
-.keyboard-container2,
-.calc-container__switch-button_background2 {
+body.theme-2 .keyboard-container,
+body.theme-2 .calc-container__switch-button_background {
   background-color: hsl(0°, 6%, 82%);
 }
 
-.keyboard-container__button2 {
+body.theme-2 .keyboard-container__row button {
   background-color: hsl(48°, 9%, 89%);
   color: hsl(60°, 12%, 17%);
 }
 
-.button_delreset-color2 {
+body.theme-2 button.button_delreset-color {
   background-color: hsl(185°, 41%, 37%);
   color: $white-color;
+  &:active {
+    background-color: hsl(185°, 41%, 56%);
+  }
 }
 
-.button_delreset-color2:active {
-  background-color: hsl(185°, 41%, 56%);
-}
-
-.button_equal-color2 {
+body.theme-2 button.button_equal-color {
   background-color: hsl(25°, 99%, 39%);
   color: $white-color;
-}
-
-.button_equal-color2:active {
-  background-color: hsl(25°, 100%, 61%);
+  &:active {
+    background-color: hsl(25°, 100%, 61%);
+  }
 }
 
 // Theme 3
 
-.body3 {
+.theme-3 {
   background-color: hsl(268°, 75%, 9%);
 }
 
-.h2_theme3,
-.h6_theme3,
-.p_theme3 {
+body.theme-3 h1,
+body.theme-3 h2,
+body.theme-3 li {
   color: hsl(55°, 100%, 64%);
 }
 
-.calc-container__switch-button3 {
+body.theme-3 .calc-container__switch-button {
   left: 65px;
   background-color: hsl(179°, 100%, 78%);
 }
 
-.input3 {
+body.theme-3 input {
   color: hsl(51°, 88%, 59%);
 }
 
-.keyboard-container3,
-.screen3,
-.calc-container__switch-button_background3,
-.button_equal-color3 {
+body.theme-3 .keyboard-container,
+body.theme-3 .screen,
+body.theme-3 .calc-container__switch-button_background,
+body.theme-3 .button_equal-color3 {
   background-color: hsl(269°, 74%, 12%);
 }
 
-.keyboard-container__button3 {
+body.theme-3 .keyboard-container__row button {
   background-color: hsl(269°, 48%, 20%);
   color: hsl(55°, 100%, 64%);
   box-shadow: 0px 4px hsl(288°, 59%, 35%);
+  &:active {
+    background-color: hsl(267°, 54%, 44%);
+  }
 }
 
-.keyboard-container__button3:active {
-  background-color: hsl(267°, 54%, 44%);
-}
-
-.button_delreset-color3 {
+body.theme-3 button.button_delreset-color {
   background-color: hsl(281°, 89%, 26%);
   color: $white-color;
   box-shadow: 0px 4px hsl(285°, 93%, 53%);
+  &:active {
+    background-color: hsl(280°, 56%, 44%);
+  }
 }
 
-.button_delreset-color3:active {
-  background-color: hsl(280°, 56%, 44%);
-}
-
-.button_equal-color3 {
+body.theme-3 button.button_equal-color {
   background-color: hsl(176°, 100%, 44%);
   color: $white-color;
   box-shadow: 0px 4px hsl(176°, 100%, 68%);
-}
-
-.button_equal-color3:active {
-  background-color: hsl(177°, 100%, 79%);
-}
-
-// Responsive Design
-
-@media (max-width: 768px) {
-  .calc-container {
-    padding: 30px;
-  }
-  .keyboard-container__button {
-    min-width: 60px;
-    transition: 0.25s linear;
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 385px) {
-  .keyboard-container__button {
-    min-width: 50px;
-    min-height: 40px;
-    transition: 0.25s linear;
-    font-size: 16px;
+  &:active {
+    background-color: hsl(177°, 100%, 79%);
   }
 }
